@@ -109,9 +109,9 @@ a:hover {
 }
 
 .social-icon img {
-  width: 40px;
+  width: 50px;
   border-radius: 50%; 
-  transition: transform 0.3s ease-in-out;
+  transition: stransform 0.3s ease-in-out;
 }
 
 .social-icon:hover img {
