@@ -86,9 +86,9 @@ a:hover {
   grid-area: span 1/ span 3;
 }
 
-/* Antrašės stilius */
+
 .main-header {
-  background-color: #333; /* Pakeiskite spalvą pagal savo poreikius */
+  background-color: #333;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -109,14 +109,13 @@ a:hover {
 }
 
 .social-icon img {
-  width: 30px; /* Pakeiskite dydį pagal savo poreikius */
-  height: 30px;
-  border-radius: 50%; /* Apskritimo forma */
-  transition: transform 0.3s ease-in-out; /* Animacija keičianti dydį */
+  width: 40px;
+  border-radius: 50%; 
+  transition: transform 0.3s ease-in-out;
 }
 
 .social-icon:hover img {
-  transform: scale(1.2); /* Padidina ikonų dydį, kai pele užvedama */
+  transform: scale(1.2);
 }
 
 .main-footer {
