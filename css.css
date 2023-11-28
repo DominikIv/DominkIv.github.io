@@ -1,0 +1,148 @@
+html{
+  background-color: rgb(52, 52, 52);
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: auto;
+    font-weight: auto;
+    color: #272829;
+  }
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    width: auto;
+
+}
+
+.container>section, .container>div {
+  background-color: #cbe6ad;
+  padding: 20px 0;
+  font-size: 20px;
+  text-align: center;
+  border: 4px solid #000000;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+.name{
+  grid-area: 1/1/span 1/span 3;
+}
+
+.about {
+  grid-area: 2/1/span 1/span 2;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+.audio {
+  background-color: #000000;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.audio p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.print-button {
+  background-color: grey;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+  background-color: #007BFF;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: auto;
+  }
+}
+
+.print {
+  grid-area: span 1/ span 3;
+}
+
+/* Antrašės stilius */
+.main-header {
+  background-color: #333; /* Pakeiskite spalvą pagal savo poreikius */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 30%;
+  height: auto;
+}
+
+.social-nav {
+  display: flex;
+}
+
+.social-icon {
+  margin-right: 10px;
+}
+
+.social-icon img {
+  width: 30px; /* Pakeiskite dydį pagal savo poreikius */
+  height: 30px;
+  border-radius: 50%; /* Apskritimo forma */
+  transition: transform 0.3s ease-in-out; /* Animacija keičianti dydį */
+}
+
+.social-icon:hover img {
+  transform: scale(1.2); /* Padidina ikonų dydį, kai pele užvedama */
+}
+
+.main-footer {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-footer .contact-info, .main-footer .creator-info {
+  flex: 1;
+}
+
+.main-footer .footer-nav {
+  display: flex;
+}
+
+.main-footer .footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.main-footer .footer-nav a:hover {
+  color: #cbe6ad;
+}
