@@ -53,7 +53,6 @@ a:hover {
   border: 2px solid black;
   border-radius: 5px;
   text-align: center;
-  margin: 20px 0;
 }
 
 .audio p {
@@ -144,4 +143,42 @@ a:hover {
 
 .main-footer .footer-nav a:hover {
   color: #cbe6ad;
+}
+.clock1{
+  display: inline-block;
+  border: 5px solid black;
+  padding: 10px 8px;
+  border-radius: 100px;
+  background-color: lightgrey;
+}
+
+#clock{
+  font-size: 64px;
+  text-align: center;
+  color: #272829; 
+  font-family: 'Arial', sans-serif;
+}
+
+.TLabel{
+  font-size: 32px;
+}
+
+svg{
+  animation-name: rutulys;
+  position: relative;
+  animation-duration: 500ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes rutulys {
+  0%{
+    top: 150px;
+  }
+  50%{
+
+  }
+  100%{
+    top: 0px;
+  }
+  
 }
