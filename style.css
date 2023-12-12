@@ -182,3 +182,12 @@ svg{
   }
   
 }
+
+.contacts{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+label{
+  text-align: center;
+}

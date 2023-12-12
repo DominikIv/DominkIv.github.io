@@ -227,7 +227,121 @@
                 <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
             </svg>
         </div>
+        <div class="contacts">
+            <h1>Kontaktų forma</h1>
+            <form id="contactForm">
+                <label for="name">Vardas:</label>
+                <input type="text" id="name" required><br>
+
+                <label for="surname">Pavardė:</label>
+                <input type="text" id="surname" required><br>
+
+                <label for="email">El. paštas:</label>
+                <input type="email" id="email" required><br>
+
+                <label for="phone">Telefono numeris:</label>
+                <input type="tel" id="phone" required><br>
+
+                <label for="address1">Adresas 1:</label>
+                <input type="text" id="address1" required><br>
+
+                <label for="address2">Adresas 2:</label>
+                <input type="text" id="address2" required><br>
+
+                <label for="additional1">Papildomas požymis 1 (skaičius):</label>
+                <input type="number" id="additional1" required><br>
+
+                <label for="additional2">Papildomas požymis 2 (skaičius):</label>
+                <input type="number" id="additional2" required><br>
+
+                <label for="additional3">Papildomas požymis 3 (skaičius):</label>
+                <input type="number" id="additional3" required><br>
+
+                <label for="additional4">Papildomas požymis 4 (skaičius):</label>
+                <input type="number" id="additional4" required><br>
+
+                <label for="additional5">Papildomas požymis 5 (skaičius):</label>
+                <input type="number" id="additional5" required><br>
+
+                <button type="button" onclick="submitForm()">Siųsti</button>
+            </form>
+        </div>
+        <div id="result"></div>
     </div>
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address1 = document.getElementById('address1').value;
+            const address2 = document.getElementById('address2').value;
+            const additional1 = parseFloat(document.getElementById('additional1').value);
+            const additional2 = parseFloat(document.getElementById('additional2').value);
+            const additional3 = parseFloat(document.getElementById('additional3').value);
+            const additional4 = parseFloat(document.getElementById('additional4').value);
+            const additional5 = parseFloat(document.getElementById('additional5').value);
+
+            // El. pašto adreso patikra
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Neteisingas el. pašto adresas');
+                return;
+            }
+
+            // Telefono numerio patikra
+            const phoneRegex = /^\d{9}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Neteisingas telefono numeris');
+                return;
+            }
+
+            // Adreso sujungimas
+            const fullAddress = address1 + ', ' + address2;
+
+            // Skaičių požymių vidurkio skaičiavimas
+            const average = (additional1 + additional2 + additional3 + additional4 + additional5) / 5;
+
+            // Spausdinimas į konsolę
+            console.log('Vardas: ' + name);
+            console.log('Pavardė: ' + surname);
+            console.log('El. paštas: ' + email);
+            console.log('Telefono numeris: ' + phone);
+            console.log('Adresas: ' + fullAddress);
+            console.log('Papildomas požymis 1: ' + additional1);
+            console.log('Papildomas požymis 2: ' + additional2);
+            console.log('Papildomas požymis 3: ' + additional3);
+            console.log('Papildomas požymis 4: ' + additional4);
+            console.log('Papildomas požymis 5: ' + additional5);
+            console.log('Vidurkis: ' + average);
+
+            // Spausdinimas į HTML puslapį
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <p>Vardas: ${name}</p>
+                <p>Pavardė: ${surname}</p>
+                <p>El. paštas: ${email}</p>
+                <p>Telefono numeris: ${phone}</p>
+                <p>Adresas: ${fullAddress}</p>
+                <p>Papildomas požymis 1: ${additional1}</p>
+                <p>Papildomas požymis 2: ${additional2}</p>
+                <p>Papildomas požymis 3: ${additional3}</p>
+                <p>Papildomas požymis 4: ${additional4}</p>
+                <p>Papildomas požymis 5: ${additional5}</p>
+                <p>Vidurkis: <span style="color: ${getColorForAverage(average)}">${average}</span></p>
+            `;
+        }
+
+        function getColorForAverage(average) {
+            if (average < 3) {
+                return 'red';
+            } else if (average < 7) {
+                return 'orange';
+            } else {
+                return 'green';
+            }
+        }
+    </script>
        
     <footer class="main-footer">
         <div class="contact-info" id="contacts">
